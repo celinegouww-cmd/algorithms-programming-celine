@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class icescreamweek3_celinegouw {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Deklarasi dan inisialisasi variabel harga Ice Cream dalam rupiah
+        int IceCreamCup = 16000;
+        int IceCone = 12000;
+        int IceCreamRoti = 10000;
+
+        // Input jumlah Ice Cream yang terjual
+        System.out.print("Jumlah Ice Cream Cup yang terjual: ");
+        int JumlahIceCreamcup = scanner.nextInt();
+
+        System.out.print("Jumlah Ice Cream Cone yang terjual: ");
+        int jumlahIceCone = scanner.nextInt();
+
+        System.out.print("Jumlah Ice Cream Roti yang terjual: ");
+        int jumlahIceCreamRoti = scanner.nextInt();
+
+        // Menghitung total penjualan kotor
+        int totalPenjualan = (JumlahIceCreamcup * IceCreamCup) 
+                            + (jumlahIceCone * IceCone) 
+                            + (jumlahIceCreamRoti * IceCreamRoti);
+
+        // Menghitung Pajak (11%), Biaya Layanan (5%), dan Total Penjualan Bersih
+        double totalPajak = totalPenjualan * 0.11;
+        double totalServiceFee = totalPenjualan * 0.05;
+        double totalPenjualanBersih = totalPenjualan - totalPajak - totalServiceFee;
+
+        // Menampilkan seluruh hasil perhitungan
+        System.out.println("Total Penjualan Hari Ini: Rp " + totalPenjualan);
+        System.out.println("Total Pajak Hari Ini: Rp " + totalPajak);
+        System.out.println("Total Service Fee Hari Ini: Rp " + totalServiceFee);
+        System.out.println("Total Penjualan Bersih Hari ini: Rp " + totalPenjualanBersih);
+
+        // Menutup scanner
+        scanner.close();
+    }
+}
